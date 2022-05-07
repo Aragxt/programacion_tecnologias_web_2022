@@ -10,6 +10,14 @@ body {
     color: #969fa4;
 }
 
+#pass{
+    border-color: red;
+}
+
+#passv{
+    border-color: red;
+}
+
 .form-control:focus {
     border-color: #a0e5a0;
 }
