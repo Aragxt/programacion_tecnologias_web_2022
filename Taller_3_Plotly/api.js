@@ -48,7 +48,7 @@ var layout={
     title: 'NACIDOS ENTRE 2012 Y 2017 EN CIUDADES PRINCIPALES',
     showlegend: false,
     height: 600,
-    width: 600
+    width: 1500
 
 };
 Plotly.newPlot("myDiv",datosGraficas,layout);
