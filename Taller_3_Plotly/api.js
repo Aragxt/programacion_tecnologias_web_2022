@@ -1,16 +1,3 @@
-function Mycolor() {
-  genero=sex;
-  if(genero == "MASCULINO"){
-    genero=" ";
-    return("red");
-
-  }
-  else{
-    genero=" ";
-    return("blue");
-  }
-}
-
 var num = [];
 var sex = [];
 var ciudd = [];
@@ -32,20 +19,34 @@ datos_obetenidos.forEach(function agregar (datos_obetenidos)
 
 });
 var graf1={
-    y: num,
-    x: ciudd,
-    text: sex,
+    type: 'scatter',
     mode: 'markers',
+
+    x: ciudd,
+    y: num,
+    text: sex,
+
     marker: {
-      color: Mycolor(sex),
-      size: 20
-    }
+      size: 17,
+      opacity: 0.8,
+    },
+    transforms: [
+      {
+        type: 'groupby',
+        groups: sex,
+        styles: [
+          {target: "MASCULINO", value: {marker: {color: 'yellow'}}},
+          {target: "FEMENINO", value: {marker: {color: 'silver'}}},
+          {target: "OTRO", value: {marker: {color: 'red'}}},
+      ]
+     }]
 
 };
+
 var datosGraficas= [graf1];
 
 var layout={
-    title: 'NACIDOS',
+    title: 'NACIDOS ENTRE 2012 Y 2017 EN CIUDADES PRINCIPALES',
     showlegend: false,
     height: 600,
     width: 600
